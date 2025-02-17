@@ -42,9 +42,8 @@ class User(db.Model):
       """Create hashed password."""
       self.password = generate_password_hash(password, method='sha256')
 
-def __repr__(self):
-  category_names = ', '.join([category.text for category in self.categories])
-  return f'<Todo: {self.id} | {self.user.username} | {self.text} | { "done" if self.done else "not done" } | categories [{category_names}]>' 
+  def __repr__(self):
+      return f'<User {self.id} {self.username} - {self.email}>' 
 
 class TodoCategory(db.Model):
   __tablename__ ='todo_category'
