@@ -1,5 +1,5 @@
 import click, sys
-from models import db, User
+from models import db, User, Todo
 from app import app
 from sqlalchemy.exc import IntegrityError
 
