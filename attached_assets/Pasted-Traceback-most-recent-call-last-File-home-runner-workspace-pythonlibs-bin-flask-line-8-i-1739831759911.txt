@@ -1,0 +1,53 @@
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/bin/flask", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/flask/cli.py", line 1129, in main
+    cli.main()
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/flask/cli.py", line 400, in decorator
+    return ctx.invoke(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/wsgi.py", line 12, in initialize
+    bob = User('bob', 'bob@mail.com', 'bobpass')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/sqlalchemy/orm/state.py", line 479, in _initialize_instance
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/sqlalchemy/orm/state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/models.py", line 39, in __init__
+    self.set_password(password)
+  File "/home/runner/workspace/models.py", line 43, in set_password
+    self.password = generate_password_hash(password, method='sha256')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/werkzeug/security.py", line 108, in generate_password_hash
+    h, actual_method = _hash_internal(method, salt, password)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/werkzeug/security.py", line 70, in _hash_internal
+    raise ValueError(f"Invalid hash method '{method}'.")
+ValueError: Invalid hash method 'sha256'.
+~/workspace$ 
