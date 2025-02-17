@@ -73,7 +73,7 @@ def add_task(username, text):
       print(f'{username} not found!')
       return
   new_todo = Todo(text)
-  bob.todos.append(new_todo)
-  db.session.add(bob)
+  new_todo.user_id = bob.id
+  db.session.add(new_todo)
   db.session.commit()
   
